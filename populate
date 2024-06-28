@@ -1,0 +1,223 @@
+INSERT INTO TABLE_INFO (Table_Number, Section_Type, Seating_Capacity, Status)
+VALUES
+  (1, 'Dining', 4, 'Occupied'),
+  (2, 'Dining', 4, 'Occupied'),
+  (3, 'Terrace', 6, 'Occupied'),
+  (4, 'Private Room', 8, 'Occupied'),
+  (5, 'Terrace', 6, 'Occupied'),
+  (6, 'Dining', 4, 'Not occupied'),
+  (7, 'Terrace', 6, 'Not occupied'),
+  (8, 'Dining', 4, 'Not occupied'),
+  (9, 'Private Room', 8, 'Not occupied'),
+  (10, 'Terrace', 6, 'Not occupied');
+
+  
+-- Populate CUSTOMER table
+INSERT INTO CUSTOMER (Fname, Mname, Lname, Phone_No, Business_provided_till_now, Birthday, Table_Number)
+VALUES
+  ('Emily', 'A', 'Johnson', '1234567890', 500, '1992-08-18', 1),
+  ('James', 'B', 'Thompson', '9876543210', 800, '1987-03-22', 2),
+  ('Sophia', 'C', 'Anderson', '5555555555', 300, '1994-06-10', 3),
+  ('Oliver', 'D', 'Williams', '1111111111', 600, '1989-11-30', 4),
+  ('Ava', 'E', 'Davis', '9998887777', 400, '1991-02-25', 5);
+
+
+-- Populate CHEF table
+INSERT INTO CHEF (Chef_ID, Fname, Mname, Lname, Date_of_join, Rating, Salary)
+VALUES
+  ('C001', 'Michael', 'A', 'Johnson', '2010-03-15', 4, 60000),
+  ('C002', 'Emma', 'B', 'Smith', '2012-08-10', 3, 55000),
+  ('C003', 'Alexander', 'C', 'Garcia', '2015-01-20', 5, 70000),
+  ('C004', 'Sophia', 'D', 'Williams', '2018-06-05', 4, 65000),
+  ('C005', 'Oliver', 'E', 'Brown', '2020-02-18', 4, 62000);
+
+
+-- Populate WAITER table
+INSERT INTO WAITER (Fname, Mname, Lname, Waiter_ID, Date_of_join, Rating, Number_of_tables_served_this_month, Salary, Mentor_ID)
+VALUES
+  ('Ryan', 'A', 'Johnson', 'W006', '2013-05-20', 4, 28, 58000, NULL),
+  ('Sophie', 'B', 'Miller', 'W007', '2015-10-12', 3, 22, 50000, NULL),
+  ('Lucas', 'C', 'Martinez', 'W008', '2017-03-28', 4, 30, 60000, NULL),
+  ('Isabella', 'D', 'Taylor', 'W009', '2020-08-15', 4, 26, 54000, NULL),
+  ('Elijah', 'E', 'White', 'W010', '2022-02-10', 3, 35, 62000, NULL);
+
+-- Populate DISH table
+INSERT INTO DISH (Name, Category, Cuisine, Description, Price)
+VALUES
+  ('Chicken Parmesan', 'Non-veg', 'Italian', 'Breaded chicken topped with marinara sauce and cheese', 25),
+  ('Margherita Pasta', 'Veg', 'Italian', 'Classic pasta with tomato sauce and mozzarella', 18),
+  ('Margherita Pizza', 'Veg', 'Italian', 'Classic pizza with tomato, mozzarella, and basil', 22),
+  ('Masala Dosa', 'Veg', 'Indian', 'Crispy dosa filled with spiced potato', 12),
+  ('Noodles Stir-Fry', 'Vegan', 'Chinese', 'Stir-Fried noodles with mixed vegetables', 18),
+  ('Paneer Butter Masala', 'Veg', 'Indian', 'Rich and creamy paneer curry', 20),
+  ('Schezwan Noodles', 'Vegan', 'Chinese', 'Spicy noodles with vegetables in Schezwan sauce', 15),
+  ('Vegetable Biryani', 'Veg', 'Indian', 'Aromatic rice dish with mixed vegetables', 15);
+
+
+-- Populate COMBO table with individual dishes in combos
+INSERT INTO COMBO (Name, Dish_Name, Price, Availability)
+VALUES
+  ('Italian Feast', 'Chicken Parmesan', 40, 1),
+  ('Italian Feast', 'Margherita Pasta', 40, 1),
+  
+  ('Veg Delight', 'Masala Dosa', 30, 1),
+  ('Veg Delight', 'Margherita Pizza', 30, 1),
+  
+  ('Asian Fusion', 'Noodles Stir-Fry', 32, 0),
+  ('Asian Fusion', 'Schezwan Noodles', 32, 0),
+  
+  ('Spicy Duo', 'Paneer Butter Masala', 35, 1),
+  ('Spicy Duo', 'Schezwan Noodles', 35, 1),
+    
+  ('Classic Combo', 'Masala Dosa', 38, 0),
+  ('Classic Combo', 'Vegetable Biryani', 38, 0),
+  ('Classic Combo', 'Margherita Pizza', 38, 0),
+  
+  ('Family Special', 'Chicken Parmesan', 50, 1),
+  ('Family Special', 'Paneer Butter Masala', 50, 1),
+  ('Family Special', 'Vegetable Biryani', 50, 1);
+
+INSERT INTO SUPPLIER_PIN (Pincode, City)
+VALUES
+  ('110001', 'Delhi'),
+  ('560001', 'Bangalore'),
+  ('500032', 'Hyderabad'),
+  ('400001', 'Mumbai'),
+  ('110024', 'Delhi'),
+  ('411014', 'Pune'),
+  ('560034', 'Bangalore'),
+  ('400050', 'Mumbai');
+
+INSERT INTO SUPPLIER (Supplier_ID, Fname, Mname, Lname, House_No, Street, Pincode, Phone_No, Transaction_Amount)
+VALUES
+  ('SUP001', 'Ramesh', 'Kumar', 'Agarwal', '12', 'Main Road', 110001, '9876543210', 5000),
+  ('SUP002', 'Sunita', 'Dev', 'Sharma', '45', 'Market Street', 560001, '8765432109', 6000),
+  ('SUP005', 'Vijay', 'Kumar', 'Verma', '78', 'Gandhi Nagar', 500032, '7654321098', 7000),
+  ('SUP006', 'Sangeeta', 'Singh', 'Chauhan', '23', 'MG Road', 400001, '6543210987', 5500),
+  ('SUP007', 'Anand', 'Prakash', 'Joshi', '56', 'Lajpat Nagar', 110024, '5432109876', 8000),
+  ('SUP010', 'Preeti', 'Rajesh', 'Verma', '67', 'Viman Nagar', 411014, '2109876543', 7500),
+  ('SUP011', 'Sarika', 'Suresh', 'Mehra', '89', 'Kormangala', 560034, '4321098765', 4500),
+  ('SUP012', 'Alok', 'Kumar', 'Sharma', '34', 'Bandra', 400050, '3210987654', 9000);
+
+
+
+INSERT INTO INGREDIENT (Name, Quantity_in_hand, Supplier_ID)
+VALUES
+  ('Chicken Breast', 50, 'SUP001'),
+  ('Pasta', 30, 'SUP002'),
+  ('Pizza Dough', 25, 'SUP011'),
+  ('Dosa Batter', 40, 'SUP011'),
+  ('Noodles', 60, 'SUP005'),
+  ('Paneer', 35, 'SUP006'),
+  ('Rice', 100, 'SUP007'), 
+  ('Tomato Sauce', 40, 'SUP012'),
+  ('Mozzarella Cheese', 20, 'SUP012'), 
+  ('Aromatic Spices', 50, 'SUP010');
+
+
+INSERT INTO DISH_REQUIREMENT (Dish_Name, Ingredient)
+VALUES
+  ('Chicken Parmesan', 'Chicken Breast'),
+  ('Margherita Pasta', 'Pasta'),
+  ('Margherita Pizza', 'Pizza Dough'),
+  ('Masala Dosa', 'Dosa Batter'),
+  ('Noodles Stir-Fry', 'Noodles'),
+  ('Paneer Butter Masala', 'Paneer'),
+  ('Schezwan Noodles', 'Noodles'),
+  ('Vegetable Biryani', 'Rice'),
+  ('Margherita Pizza', 'Tomato Sauce'),
+  ('Margherita Pizza', 'Mozzarella Cheese'),
+  ('Margherita Pasta', 'Mozzarella Cheese');
+
+
+-- Populate INGREDIENT table
+
+
+INSERT INTO WAITER_SHIFT (Waiter_ID, Shift_Start_time, Shift_end_time)
+VALUES
+  ('W006', '08:00:00', '16:00:00'),
+  ('W007', '12:00:00', '20:00:00'),
+  ('W008', '16:00:00', '00:00:00'),
+  ('W009', '09:00:00', '17:00:00'),
+  ('W010', '14:00:00', '22:00:00');
+
+
+INSERT INTO CHEF_SPECIALISATION (Chef_ID, Dish_name)
+VALUES
+  ('C001', 'Chicken Parmesan'),
+  ('C002', 'Margherita Pizza'),
+  ('C002', 'Margherita Pasta'),
+  ('C003', 'Schezwan Noodles'),
+  ('C004', 'Masala Dosa'),
+  ('C005', 'Paneer Butter Masala'),
+  ('C005', 'Vegetable Biryani'),
+  ('C001', 'Noodles Stir-Fry');
+
+
+INSERT INTO CHEF_SHIFT (Chef_ID, Shift_Start_time, Shift_end_time)
+VALUES
+  ('C001', '08:00:00', '15:00:00'),
+  ('C002', '10:00:00', '17:00:00'),
+  ('C003', '12:00:00', '19:00:00'),
+  ('C004', '14:00:00', '21:00:00'),
+  ('C005', '16:00:00', '23:00:00');
+
+
+INSERT INTO ORDER_INFO (Order_Number, Date, Time, Total_price, Customer_Phone_No, Rating, Comment)
+VALUES
+  (1, '2023-11-23', '18:30:00', 50, '1111111111', 4, 'Great service!'),
+  (2, '2023-11-24', '19:15:00', 45, '1234567890', 5, 'Excellent experience'),
+  (3, '2023-11-25', '20:00:00', 30, '5555555555', 3, 'Average food quality'),
+  (4, '2023-11-26', '18:45:00', 70, '9876543210', 4, 'Enjoyed the meal'),
+  (5, '2023-11-27', '21:00:00', 40, '9998887777', 5, 'Amazing flavors');
+
+
+INSERT INTO ORDER_DISHES (Order_Number, Date, Customer_Phone_No, Dish_name)
+VALUES
+  (1, '2023-11-23', '1111111111', 'Chicken Parmesan'),
+  (2, '2023-11-24', '1234567890', 'Margherita Pasta'),
+  (3, '2023-11-25', '5555555555', 'Noodles Stir-Fry'),
+  (4, '2023-11-26', '9876543210', 'Masala Dosa'),
+  (5, '2023-11-27', '9998887777', 'Vegetable Biryani');
+
+
+
+
+INSERT INTO COMBO_TYPE (Name, Dish_Name, Type)
+VALUES
+  ('Asian Fusion', 'Noodles Stir-Fry', 'Dinner Combo'),
+  ('Asian Fusion', 'Schezwan Noodles', 'Dinner Combo'),
+  ('Classic Combo', 'Margherita Pizza', 'Lunch Combo'),
+  ('Classic Combo', 'Vegetable Biryani', 'Lunch Combo'),
+  ('Family Special', 'Chicken Parmesan', 'Weekend Special'),
+  ('Family Special', 'Paneer Butter Masala', 'Weekend Special'),
+  ('Family Special', 'Vegetable Biryani', 'Weekend Special'),
+  ('Italian Feast', 'Chicken Parmesan', 'Dinner Combo'),
+  ('Italian Feast', 'Margherita Pasta', 'Dinner Combo'),
+  ('Spicy Duo', 'Paneer Butter Masala', 'Lunch Combo'),
+  ('Spicy Duo', 'Schezwan Noodles', 'Lunch Combo'),
+  ('Veg Delight', 'Margherita Pizza', 'Lunch Combo'),
+  ('Veg Delight', 'Masala Dosa', 'Lunch Combo');
+
+
+INSERT INTO GIVES (Phone_No, Order_Number, Date, Waiter_ID)
+VALUES
+  ('1111111111', 1, '2023-11-23', 'W006'),
+  ('1234567890', 2, '2023-11-24', 'W007'),
+  ('5555555555', 3, '2023-11-25', 'W008'),
+  ('9876543210', 4, '2023-11-26', 'W009'),
+  ('9998887777', 5, '2023-11-27', 'W010');
+
+
+INSERT INTO BRINGS (Waiter_ID, Order_Number, Customer_Phone_No, Date, Chef_ID, Table_Number)
+VALUES
+  ('W006', 1, '1111111111', '2023-11-23', 'C001', 1),
+  ('W007', 2, '1234567890', '2023-11-24', 'C002', 2),
+  ('W008', 3, '5555555555', '2023-11-25', 'C003', 3),
+  ('W009', 4, '9876543210', '2023-11-26', 'C004', 4),
+  ('W010', 5, '9998887777', '2023-11-27', 'C005', 5);
+
+
+SELECT table_name, table_rows
+FROM information_schema.tables
+WHERE table_schema = 'final_restaurant';
